@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": "Vegan Recipes",
+  "homepage": "Vegan Ventures",
   "version": "0.1.0",
   "main": "backend/server.js",
   "private": true,
