@@ -1,69 +1,180 @@
-# Getting Started with Create React App
+# Vegan Recipes Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Database Schema](#database-schema)
+- [Deployment](#deployment)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+The Vegan Recipes Application is a full-stack web application that allows users to search, find, and save vegan recipes. Users can log in, view detailed information about recipes, add recipes to their favorites, and edit their profile information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- User authentication (register, login, logout)
+- Search for vegan recipes
+- View detailed recipe information
+- Add recipes to favorites
+- Edit user profile
+- Responsive UI
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **Styling**: CSS
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js and npm installed
+- MongoDB installed and running
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**:
 
-### `npm run eject`
+    ```sh
+    git clone https://github.com/your-username/vegan-recipes-app.git
+    cd vegan-recipes-app
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Backend Setup**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```sh
+    cd backend
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Environment Variables**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Create a `.env` file in the `backend` directory with the following variables:
 
-## Learn More
+    ```env
+    MONGODB_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Start Backend Server**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```sh
+    npm start
+    ```
 
-### Code Splitting
+5. **Frontend Setup**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```sh
+    cd ../frontend
+    npm install
+    ```
 
-### Analyzing the Bundle Size
+6. **Environment Variables**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Create a `.env` file in the `frontend` directory with the following variable:
 
-### Making a Progressive Web App
+    ```env
+    REACT_APP_API_URL=http://localhost:5000/api
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+7. **Start Frontend Server**:
 
-### Advanced Configuration
+    ```sh
+    npm start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Usage
 
-### Deployment
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register a new user or log in with existing credentials.
+3. Search for vegan recipes, view details, and add them to your favorites.
+4. Edit your profile information as needed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
+
+### User Routes
+
+- `POST /api/users/register`: Register a new user
+- `POST /api/users/login`: Login a user
+- `GET /api/users/profile`: Get user profile
+- `PUT /api/users/profile`: Update user profile
+- `PUT /api/users/password`: Change user password
+
+### Recipe Routes
+
+- `POST /api/recipes`: Create a new recipe
+- `GET /api/recipes`: Get all recipes
+- `GET /api/recipes/:id`: Get a recipe by ID
+- `PUT /api/recipes/:id`: Update a recipe by ID
+- `DELETE /api/recipes/:id`: Delete a recipe by ID
+
+## Database Schema
+
+### User Collection
+
+- `username`: String, Unique, Required
+- `email`: String, Unique, Required
+- `password`: String, Required
+- `favorites`: Array of ObjectId (References Recipe)
+
+### Recipe Collection
+
+- `title`: String, Required
+- `description`: String
+- `ingredients`: Array of String, Required
+- `instructions`: String, Required
+- `createdBy`: ObjectId (References User), Required
+
+## Deployment
+
+### Backend Deployment
+
+1. **Create a Web Service on Render**.
+2. **Connect your GitHub repository**.
+3. **Set the build and start commands**:
+    - Build Command: `npm install`
+    - Start Command: `node server.js`
+4. **Set Environment Variables**:
+    - `MONGODB_URI`
+    - `JWT_SECRET`
+5. **Deploy the backend**.
+
+### Frontend Deployment
+
+1. **Create a Static Site on Render**.
+2. **Connect your GitHub repository**.
+3. **Set the build command and publish directory**:
+    - Build Command: `npm run build`
+    - Publish Directory: `build`
+4. **Deploy the frontend**.
+
+## Testing
+
+1. **Unit Tests**: Ensure that unit tests are written for both backend and frontend components.
+2. **Integration Tests**: Write integration tests to ensure seamless interaction between frontend and backend.
+3. **Run Tests**:
+    - Backend: `npm test`
+    - Frontend: `npm test`
+
+## Contributing
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+
 
 ### `npm run build` fails to minify
 
