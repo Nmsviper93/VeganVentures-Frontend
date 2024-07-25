@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: vegan-ventures
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: Vegan Ventures
+          property: connectionString
