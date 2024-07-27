@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import useHistory to programmatically navigate
 import { useHistory } from 'react-router-dom';
-import 'SearchPage.css';
+import './SearchPage.css';
 
 const SearchPage = () => {
     const [query, setQuery] = useState('');

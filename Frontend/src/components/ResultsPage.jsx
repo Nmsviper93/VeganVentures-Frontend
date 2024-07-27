@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import 'ResultsPage.css';
+import './ResultsPage.css';
 
 const ResultsPage = () => {
     // use useLocation to access state passed via router

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '.services/axiosInstance';
-import 'FavoritesPage.css';
+import './FavoritesPage.css';
 
 const FavoritesPage = () => {
     const [favorites, setFavorites] = useState([]);
