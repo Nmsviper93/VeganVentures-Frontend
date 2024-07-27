@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axiosInstance from './Services/axiosInstance';
+import axiosInstance from '../Services/axiosInstance';
 import '../styles/RecipeDetailsPage.css'
 
 const RecipeDetailsPage = () => {

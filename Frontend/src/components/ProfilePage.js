@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from './Services/axiosInstance';
+import axiosInstance from '../Services/axiosInstance';
 import '../styles/ProfilePage.css';
 
 const ProfilePage = () => {
