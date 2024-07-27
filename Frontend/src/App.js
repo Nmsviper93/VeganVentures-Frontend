@@ -10,7 +10,7 @@ import ProfileEditPage from './components/ProfileEditPage';
 import RegisterPage from './components/RegisterPage';
 import RecipeDetailsPage from './components/RecipeDetailsPage';
 import Recipes from './components/Recipes';
-import './App.css';
+import './styles/App.css';
 
 
 const App = () => {
