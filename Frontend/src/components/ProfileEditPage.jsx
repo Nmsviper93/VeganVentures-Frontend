@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../services/axiosInstance';
+import axiosInstance from '../Services/axiosInstance';
 import { useHistory } from 'react-router-dom';
-import './ProfileEditPage.css';
+import '../styles/ProfileEditPage.css';
 
 const ProfileEditPage = () => {
     const [username, setUsername] = useState('');

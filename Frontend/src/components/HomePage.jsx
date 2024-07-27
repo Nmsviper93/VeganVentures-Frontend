@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import recipeService from '../services/recipeService';
-import './HomePage.css';
+import recipeService from '../Services/recipeService';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
     const [recipes, setRecipes] = useState([]);
