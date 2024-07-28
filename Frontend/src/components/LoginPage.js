@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import axiosInstance from './services/axiosInstance';
+import axios from 'axios';
+import axiosInstance from '../Services/axiosInstance';
 import { useHistory } from 'react-router-dom';
-import 'LoginPage.css'
+import '../styles/LoginPage.css'
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');

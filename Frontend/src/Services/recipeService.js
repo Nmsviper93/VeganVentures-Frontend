@@ -30,7 +30,6 @@ const searchRecipes = async (query) => {
 };
 
 export default {
-    getAllRecipes,
     searchRecipes,
     getRecipeById
 };
