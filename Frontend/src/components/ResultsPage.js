@@ -10,16 +10,13 @@ const ResultsPage = () => {
     return ( 
         <div className="results-container">
             <h1>Search Results for "{query}"</h1>
-            // {recipes.length === 0 ? (
-            //     <p>No recipes found</p>
-            // ) : (
                 <ul>
                     {recipes.map((result) => (
                         <li key={result._id}>{result.name}</li>
                     ))}
                 </ul>
         </div>
-    // );
+    );
 };
 
 export default ResultsPage;
