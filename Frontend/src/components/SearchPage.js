@@ -10,7 +10,12 @@ const SearchPage = () => {
     // hook for navigation
     const history = useHistory();
 
-    // function to validate search query
+    // function to handle input change
+    const handleInputChange = (event) => {
+        setQuery(event.target.value);
+    };
+    
+    // function to validate form
     const validateForm = () => {
         if (query.trim() === '') {
             // minimum query length validation
