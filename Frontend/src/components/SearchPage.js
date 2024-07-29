@@ -82,7 +82,7 @@ const SearchPage = () => {
     //             <button type="submit" className="button">Search</button>
     //         </form>
     //     </div>
-    );
+    // );
 };
 
 export default SearchPage;
