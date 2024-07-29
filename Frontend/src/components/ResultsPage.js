@@ -20,7 +20,7 @@ const ResultsPage = () => {
                 </ul>
             )
         </div>
-    );
+    // );
 };
 
 export default ResultsPage;
