@@ -5,17 +5,17 @@ import '../styles/ResultsPage.css';
 const ResultsPage = () => {
     // use useLocation to access state passed via router
     const location = useLocation();
-    const recipes = location.state?.recipes || [];
+    const { query, results } = location.state || { query: '', results: [] };
 
     return ( 
         <div className="results-container">
-            <h2>Search Results</h2>
-            {recipes.length === 0 ? (
-                <p>No recipes found</p>
-            ) : (
+            <h1>Search Results for "{query}</h1>
+            // {recipes.length === 0 ? (
+            //     <p>No recipes found</p>
+            // ) : (
                 <ul>
-                    {recipes.map((recipe) => (
-                        <li key={recipe._id}>{recipe.name}</li>
+                    {recipes.map((result) => (
+                        <li key={result._id}>{result.name}</li>
                     ))}
                 </ul>
             )}
