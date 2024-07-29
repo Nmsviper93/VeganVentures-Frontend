@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
-const API_URL = '/api/users';
+const API_URL = 'https://vegan-ventures.onrender.com';
 
 let refreshTokenTimeout;
 
