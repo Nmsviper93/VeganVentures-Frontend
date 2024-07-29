@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://vegan-ventures.onrender.com';
+const API_URL = 'https://spoonacular.com/food-api';
 
 // function to fetch all favorite recipes
 const getFavorites = async (userId) => {
