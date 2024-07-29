@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // define base URL for backend API
-const API_URL = 'http://localhost:5000/api/auth/';
+const API_URL = 'https://vegan-ventures.onrender.com';
 
 // function to handle user login
 const login = async (username, password) => {
