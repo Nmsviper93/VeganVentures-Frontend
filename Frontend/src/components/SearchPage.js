@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import useHistory to programmatically navigate
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/SearchPage.css';
 
 const SearchPage = () => {
@@ -11,43 +12,76 @@ const SearchPage = () => {
 
     // function to validate search query
     const validateForm = () => {
-        if (!query || query.length < 2) {
+        if (query.trim() === '') {
             // minimum query length validation
-            setError('Search query must be a t least 2 characters long');
+            setError('Search query cannot be empty');
             return false;
         }
+        setError('');
         return true;
     };
 
 
 
     // function to handle form submission
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         // prevent default form submission behavior
         event.preventDefault();
         // validate form before proceeding
         if (!validateForm()) return;
 
-        // navigate to results page with query
-        history.push(`/results?query=${query}`);
+        try {
+            // call API to perform search
+            const response = await axios.get('https://spoonacular.com/food-api/search', {
+                params: { query }
+            });
+
+            const results = response.data.results;
+            
+            // navigate to results page with query
+            history.push({
+                pathname: '/results',
+                state: { query, results }
+            });
+        } catch (err) {
+            console.error('Error performing search', err);
+            setError('Failed to perform search');
+        }
     };
 
+
     return (
-        <div className="container">
+        <div>
             <h1>Search Recipes</h1>
-            {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Search Query</label>
-                <input 
+                <input
                     type="text"
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={handleInputChange}
+                    placeholder="Enter search query"
                 />
-                </div>
-                <button type="submit" className="button">Search</button>
+                <button type="submit">Search</button>
             </form>
+            {error && <p>{error}</p>}
         </div>
+    );
+};
+    // return (
+    //     <div className="container">
+    //         <h1>Search Recipes</h1>
+    //         {error && <p className="error">{error}</p>}
+    //         <form onSubmit={handleSubmit}>
+    //             <div>
+    //                 <label>Search Query</label>
+    //             <input 
+    //                 type="text"
+    //                 value={query}
+    //                 onChange={(e) => setQuery(e.target.value)}
+    //             />
+    //             </div>
+    //             <button type="submit" className="button">Search</button>
+    //         </form>
+    //     </div>
     );
 };
 
