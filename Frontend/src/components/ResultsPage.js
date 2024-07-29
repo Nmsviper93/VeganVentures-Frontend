@@ -18,7 +18,6 @@ const ResultsPage = () => {
                         <li key={result._id}>{result.name}</li>
                     ))}
                 </ul>
-            :)}
         </div>
     // );
 };
