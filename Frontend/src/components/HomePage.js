@@ -28,8 +28,8 @@ const HomePage = () => {
     }, []);
 
     // conditional rendering based on loading and error state
-    if (loading) return<p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
 
     return (
         <div className="home-container">
