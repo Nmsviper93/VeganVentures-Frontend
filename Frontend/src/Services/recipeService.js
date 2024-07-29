@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/recipes/';
+const API_URL = 'https://vegan-ventures.onrender.com';
 
 // function to fetch all recipes by ID
 const getRecipeById = async (id) => {
