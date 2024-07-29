@@ -11,7 +11,7 @@ const ResultsPage = () => {
         <div className="results-container">
             <h1>Search Results for "{query}"</h1>
                 <ul>
-                    {recipes.map((result) => (
+                    {results.map((result) => (
                         <li key={result._id}>{result.name}</li>
                     ))}
                 </ul>
