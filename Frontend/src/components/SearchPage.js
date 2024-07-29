@@ -83,6 +83,6 @@ const SearchPage = () => {
     //         </form>
     //     </div>
     // );
-};
+// };
 
 export default SearchPage;
