@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import recipeService from '../Services/recipeService';
 import '../styles/HomePage.css';
 
@@ -36,7 +37,8 @@ const HomePage = () => {
             <h2>All Vegan Recipes</h2>
             <ul>
                 {(recipes || []).map((recipe) => (
-                    <li key={recipe._id}>{recipe.title}</li>
+                    <li key={recipe._id}>
+                        <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
                 ))}
             </ul>
         </div>
