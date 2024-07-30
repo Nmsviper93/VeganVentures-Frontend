@@ -35,7 +35,7 @@ const HomePage = () => {
         <div className="home-container">
             <h2>All Vegan Recipes</h2>
             <ul>
-                {recipes.map((recipe) => (
+                {(recipes || []).map((recipe) => (
                     <li key={recipe._id}>{recipe.name}</li>
                 ))}
             </ul>
