@@ -11,7 +11,7 @@ const getAllVeganRecipes = async () => {
             params: {
                 diet: 'vegan',
                 number: 20,
-                apiKey: d74a060a9a3b426f9689dc4e20d2f1ce,
+                apiKey: 'd74a060a9a3b426f9689dc4e20d2f1ce',
                 sort: 'random'
             }
         });
@@ -36,6 +36,6 @@ const getAllVeganRecipes = async () => {
 // };
 
 export default {
-    getAllRecipes,
+    getAllVeganRecipes,
     // getRecipeById
 };
