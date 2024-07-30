@@ -3,7 +3,10 @@ import { jwtDecode } from 'jwt-decode';
 import userService from './userService';
 
 const axiosInstance = axios.create({ 
-    baseURL: 'https://spoonacular.com/food-api',
+    baseURL: 'https://api.spoonacular.com',
+    headers: {
+        'Content-Type': 'application/json',
+    },
 });
 
 // interceptor to add JWT token to each request
