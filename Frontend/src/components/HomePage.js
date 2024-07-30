@@ -39,6 +39,7 @@ const HomePage = () => {
                 {(recipes || []).map((recipe) => (
                     <li key={recipe._id}>
                         <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
+                    </li>
                 ))}
             </ul>
         </div>
