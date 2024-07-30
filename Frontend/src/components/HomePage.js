@@ -12,7 +12,7 @@ const HomePage = () => {
         const fetchRecipes = async () => {
             try {
                 // call service to fetch all recipes
-                const data = await recipeService.getAllRecipes();
+                const data = await recipeService.getAllVeganRecipes();
                 // update with fetched recipes
                 setRecipes(data);
                 setLoading(false);
@@ -36,7 +36,7 @@ const HomePage = () => {
             <h2>All Vegan Recipes</h2>
             <ul>
                 {(recipes || []).map((recipe) => (
-                    <li key={recipe._id}>{recipe.name}</li>
+                    <li key={recipe._id}>{recipe.title}</li>
                 ))}
             </ul>
         </div>
