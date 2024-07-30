@@ -12,7 +12,8 @@ const getAllVeganRecipes = async () => {
                 diet: 'vegan',
                 number: 20,
                 apiKey: 'd74a060a9a3b426f9689dc4e20d2f1ce',
-                sort: 'random'
+                includeInstruction: true,
+                sort: 'alphabetical'
             }
         });
         return response.data.results;
