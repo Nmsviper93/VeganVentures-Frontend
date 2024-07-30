@@ -12,7 +12,9 @@ const RecipeDetailsPage = () => {
         // fetch recipe details when component details
         const fetchRecipe = async () => {
             try {
+                console.log('Fetching recipe with id:', id);
                 const response = await axiosInstance.get(`/recipes/${id}`)
+                console.log('Fetched recipe data:', response.data);
                 setRecipe(response.data)
             } catch (error) {
                 console.error('Error fetching recipe:', error);
