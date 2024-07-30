@@ -17,7 +17,7 @@ const App = () => {
     return (
         <div className="app-container">
             <header>
-                <h1>Vegan Recipes</h1>
+                <h1>Vegan Ventures</h1>
                 <nav>
                     <a href="/">Home</a>
                     <a href="/search">Search</a>
@@ -41,7 +41,7 @@ const App = () => {
                 </Switch>
             </Router>
             <footer>
-                <p>&copy; 2024 Vegan Recipes</p>
+                <p>&copy; 2024 Vegan Ventures</p>
             </footer>
         </div>
     );
