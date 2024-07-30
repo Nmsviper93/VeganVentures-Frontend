@@ -24,19 +24,6 @@ const getAllVeganRecipes = async () => {
     }
 };
 
-// function to fetch recipe by ID
-// const getRecipeById = async (id) => {
-//     try {
-//         // GET request to fetch recipe details by ID
-//         const response = await axios.get(`${API_URL}/recipes/${id}`); 
-//             return response.data;
-//     } catch (err) {
-//         console.error('Error searching recipes', err);
-//         throw err;
-//     }
-// };
-
 export default {
     getAllVeganRecipes,
-    // getRecipeById
 };
