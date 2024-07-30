@@ -37,5 +37,5 @@ const getAllVeganRecipes = async () => {
 
 export default {
     getAllRecipes,
-    getRecipeById
+    // getRecipeById
 };
