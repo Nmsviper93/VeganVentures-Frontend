@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import HomePage from './components/HomePage';
 import SearchPage from './components/SearchPage';
@@ -27,18 +27,18 @@ const App = () => {
                 </nav>
             </header>
             <Router>
-                <Switch>
-                    <Route exact path="/" exact component={HomePage} />
-                    <Route exact path="/search" component={SearchPage} />
+                <Routes>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/search" component={SearchPage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/favorites" component={FavoritesPage} />
-                    <Route exact path="/profile" component={ProfilePage} />
+                    <Route path="/profile" component={ProfilePage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
-                    <Route exact path="/login" component={LoginPage} />
+                    <Route path="/login" component={LoginPage} />
                     <Route path="/register" component={RegisterPage} />
                     <Route path="/recipe/:id" component={RecipeDetailsPage} />
                     <Route path="/recipes" component={Recipes} />
-                </Switch>
+                </Routes>
             </Router>
             <footer>
                 <p>&copy; 2024 Vegan Ventures</p>
