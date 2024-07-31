@@ -59,7 +59,7 @@ const SearchPage = () => {
 
 
     return (
-        <div>
+        <div className="search-container">
             <h1>Search Recipes</h1>
             <form onSubmit={handleSubmit}>
                 <input
