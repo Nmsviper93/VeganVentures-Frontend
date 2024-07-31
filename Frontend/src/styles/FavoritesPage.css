@@ -1,6 +1,7 @@
 .favorites-container {
     padding: 2em;
     text-align: center;
+    align-items: center;
 }
 
 h1 {
@@ -36,4 +37,5 @@ li button:hover {
 
 p {
     text-align: center;
+    align-items: center;
 }
