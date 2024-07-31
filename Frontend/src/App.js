@@ -28,13 +28,13 @@ const App = () => {
             </header>
             <Router>
                 <Switch>
-                    <Route path="/" exact component={HomePage} />
+                    <Route exact path="/" exact component={HomePage} />
                     <Route exact path="/search" component={SearchPage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/favorites" component={FavoritesPage} />
                     <Route exact path="/profile" component={ProfilePage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
-                    <Route path="/login" component={LoginPage} />
+                    <Route exact path="/login" component={LoginPage} />
                     <Route path="/register" component={RegisterPage} />
                     <Route path="/recipe/:id" component={RecipeDetailsPage} />
                     <Route path="/recipes" component={Recipes} />
