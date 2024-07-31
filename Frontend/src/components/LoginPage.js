@@ -89,10 +89,10 @@ const LoginPage = () => {
                     required
                 />
                 <button type="submit">{isLogin ? 'Login' : 'Create Profile'}</button>
-            </form>
             <button onClick={() => setIsLogin(!isLogin)}>
                 {isLogin ? 'Create Profile' : 'Login'}
             </button>
+            </form>
         </div>
     );
 };
