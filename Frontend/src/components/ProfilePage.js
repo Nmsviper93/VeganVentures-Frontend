@@ -11,6 +11,7 @@ const ProfilePage = () => {
             try {
                 // API call to fetch profile data
                 const response = await axiosInstance.get('/users/profile');
+                console.log('Profile Data:', response.data);
                 setProfile(response.data);
             } catch (error) {
                 // log error if API call fails
