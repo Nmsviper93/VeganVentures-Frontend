@@ -7,6 +7,9 @@ const ResultsPage = () => {
     const location = useLocation();
     const { query, results } = location.state || { query: '', results: [] };
 
+    console.log('Query:', query);
+    console.log('Results:', results);
+
     return ( 
         <div className="results-container">
             <h1>Search Results for "{query}"</h1>
