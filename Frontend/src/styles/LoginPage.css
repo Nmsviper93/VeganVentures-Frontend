@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-    align-items: center;
+    text-align: center;
 }
 
 form {
@@ -29,6 +29,7 @@ div {
 label {
     margin-bottom: 0.5em;
     color: #666;
+    padding: 2px;
 }
 
 input {
