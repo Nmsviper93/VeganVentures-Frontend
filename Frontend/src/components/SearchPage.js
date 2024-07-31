@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import useHistory to programmatically navigate
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SearchPage.css';
 
@@ -8,7 +8,7 @@ const SearchPage = () => {
     const [query, setQuery] = useState('');
     const [error, setError] = useState('');
     // hook for navigation
-    const history = useHistory();
+    const navigate = useNavigate();
 
     // function to handle input change
     const handleInputChange = (event) => {
@@ -47,7 +47,7 @@ const SearchPage = () => {
             const results = response.data.results;
             
             // navigate to results page with query
-            history.push({
+            navigate({
                 pathname: '/results',
                 state: { query, results }
             });
