@@ -60,7 +60,7 @@ const SearchPage = () => {
 
     return (
         <div className="search-container">
-            <h1>Search Recipes</h1>
+            <h1 className="placeholder-text">Search Recipes</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
