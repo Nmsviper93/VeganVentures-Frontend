@@ -66,12 +66,10 @@ const LoginPage = () => {
                     placeholder="Password"
                     required
                 />
-                <div className="button-container">
-                    <button type="submit">{isLogin ? 'Login' : 'Create Profile'}</button>
-                    <button type="button" onClick={() => setIsLogin(!isLogin)}>
-                        {isLogin ? 'Create Profile' : 'Login'}
-                    </button>
-                </div>
+                <button type="button" onClick={() => setIsLogin(!isLogin)}>
+                    {isLogin ? 'Create Profile' : 'Login'}
+                </button>
+                <button type="submit">{isLogin ? 'Login' : 'Create Profile'}</button>
             </form>
         </div>
     );
