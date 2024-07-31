@@ -60,18 +60,18 @@ const SearchPage = () => {
 
     return (
         <div className="search-container">
-            <h1 className="placeholder-text">Search Recipes</h1>
+            <h1>Search Recipes</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     value={query}
                     onChange={handleInputChange}
-                    placeholder="Search recipes"
+                    placeholder="Search Recipes"
                 />
-                // <br>
+                <br />
                 <button type="submit">Search</button>
             </form>
-            {error && <p>{error}</p>}
+            {error && <p className="error">{error}</p>}
         </div>
     );
 };
