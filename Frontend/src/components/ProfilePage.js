@@ -22,7 +22,7 @@ const ProfilePage = () => {
     }, []);
 
     if (!profile) {
-        return <div>No profile information</div>;
+        return <div className="placeholder">No profile information</div>;
     }
 
     return (
