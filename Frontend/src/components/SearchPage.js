@@ -68,7 +68,7 @@ const SearchPage = () => {
                     onChange={handleInputChange}
                     placeholder="Search recipes"
                 />
-                <br>
+                // <br>
                 <button type="submit">Search</button>
             </form>
             {error && <p>{error}</p>}
