@@ -34,14 +34,9 @@ input::placeholder {
     font-style: italic;
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
 button {
     padding: 10px 20px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -59,64 +54,8 @@ button[type="button"] {
     align-items: center;
 }
 
-
-
-
-
-
-/* .login-container {
-    padding: 2em;
-    max-width: 400px;
-    margin: auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-div {
-    margin-bottom: 1em;
-}
-
-label {
-    margin-bottom: 0.5em;
-    color: #666;
-    padding: 6px;
-}
-
-input {
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
-
-button {
-    padding: 5px;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    align-items: center;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
 .error-message {
     color: red;
     text-align: center;
 }
- */
+ 
