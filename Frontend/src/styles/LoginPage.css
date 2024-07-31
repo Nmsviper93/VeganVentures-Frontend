@@ -16,6 +16,7 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 input {
@@ -42,11 +43,13 @@ button {
 button[type="submit"] {
     background-color: #007bff;
     color: #fff;
+    align-items: center;
 }
 
 button[type="button"] {
     background-color: #007bff;
     color: #fff;
+    align-items: center;
 }
 
 
