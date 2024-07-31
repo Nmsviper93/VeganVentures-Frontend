@@ -17,6 +17,7 @@ input[type="text"]::placeholder {
     color: #999; 
     font-style: italic;
     font-size: 14px; 
+    text-align: center;
 }
 
 button {
