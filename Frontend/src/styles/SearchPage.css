@@ -33,3 +33,7 @@ button:hover {
     padding: 1em;
     border-bottom: 1px solid #ccc;
 }
+
+.placeholder-text {
+    font-size: 10;
+}
