@@ -12,10 +12,6 @@ h1 {
     color: #333;
 }
 
-h2 {
-    text-align: center;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -35,16 +31,18 @@ label {
 input {
     padding: 0.5em;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 button {
-    padding: 0.7em;
+    padding: 5px;
     color: white;
     background-color: #007BFF;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    align-items: center;
 }
 
 button:hover {
