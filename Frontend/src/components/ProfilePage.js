@@ -22,7 +22,7 @@ const ProfilePage = () => {
     }, []);
 
     if (!profile) {
-        return <div>Loading...</div>;
+        return <div>No profile information</div>;
     }
 
     return (
