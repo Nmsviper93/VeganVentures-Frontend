@@ -1,5 +1,9 @@
 .favorites-container {
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -36,7 +40,5 @@ li button:hover {
 }
 
 p {
-    text-align: center;
     margin: 0;
-    padding: 0;
-}
+} 
