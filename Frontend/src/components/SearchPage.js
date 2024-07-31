@@ -37,8 +37,11 @@ const SearchPage = () => {
 
         try {
             // call API to perform search
-            const response = await axios.get('https://spoonacular.com/food-api/search', {
-                params: { query }
+            const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
+                params: { 
+                    query, 
+                    apiKey: 'd74a060a9a3b426f9689dc4e20d2f1ce'
+                }
             });
 
             const results = response.data.results;
@@ -63,7 +66,7 @@ const SearchPage = () => {
                     type="text"
                     value={query}
                     onChange={handleInputChange}
-                    placeholder="Enter search query"
+                    placeholder="Search recipes"
                 />
                 <button type="submit">Search</button>
             </form>
@@ -71,23 +74,5 @@ const SearchPage = () => {
         </div>
     );
 };
-    // return (
-    //     <div className="container">
-    //         <h1>Search Recipes</h1>
-    //         {error && <p className="error">{error}</p>}
-    //         <form onSubmit={handleSubmit}>
-    //             <div>
-    //                 <label>Search Query</label>
-    //             <input 
-    //                 type="text"
-    //                 value={query}
-    //                 onChange={(e) => setQuery(e.target.value)}
-    //             />
-    //             </div>
-    //             <button type="submit" className="button">Search</button>
-    //         </form>
-    //     </div>
-    // );
-// };
 
 export default SearchPage;
