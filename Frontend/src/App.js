@@ -32,7 +32,7 @@ const App = () => {
                     <Route exact path="/search" component={SearchPage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/favorites" component={FavoritesPage} />
-                    <Route path="/profile" exact component={ProfilePage} />
+                    <Route exact path="/profile" component={ProfilePage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
                     <Route path="/login" component={LoginPage} />
                     <Route path="/register" component={RegisterPage} />
