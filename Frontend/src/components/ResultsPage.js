@@ -23,6 +23,7 @@ const ResultsPage = () => {
                         </li>
                     ))}
                 </ul>
+            )}
         </div>
     );
 };
