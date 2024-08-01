@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/RegisterPage.css';
 
 const RegisterPage = () => {
@@ -9,7 +9,7 @@ const RegisterPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const validateForm = () => {
         if (!username || username.length < 3) {
@@ -37,7 +37,7 @@ const RegisterPage = () => {
 
         try {
             await axios.post('/api/users/register', { username, email, password });
-            navigate('/login');
+            history.push('/login');
         } catch (error) {
             setError('Registration failed. Please try again');
         }
