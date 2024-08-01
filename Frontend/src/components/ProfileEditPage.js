@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../Services/axiosInstance';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/ProfileEditPage.css';
 
 const ProfileEditPage = () => {
@@ -9,7 +9,7 @@ const ProfileEditPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const history = useHistory();
 
     useEffect(() => {
         // fetch current profile information on mount
@@ -52,7 +52,7 @@ const ProfileEditPage = () => {
         try {
             // API call to update profile data
             await axiosInstance.put('/users/profile', { username, email, password });
-            navigate('/profile');
+            history.push('/profile');
         } catch (error) {
             setError('Profile update failed. Please try again.');
         }
