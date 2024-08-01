@@ -17,6 +17,11 @@ const LoginPage = () => {
             setError('Username and password are required');
             return false;
         }
+        if (!isLogin && !email) {
+            setError('Email is required');
+            return fals;
+        }
+        setError('');
         return true;
     };
 
@@ -27,11 +32,13 @@ const LoginPage = () => {
         try {
             // handle login
             if (isLogin) {
+                console.log('Attempting to log in with:', { username, password });
                 const response = await axiosInstance.post('/auth/login', { username, password });
                 console.log('Login successful:', response.data);
                 history.push('/profile');
             } else {
                 // handle create profile
+                console.log('Attempting to create profile with:', { username, email, password });
                 const response = await axiosInstance.post('/auth/register', { username, email, password });
                 console.log('Profile created:', response.data);
                 history.push('/profile');
