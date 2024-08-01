@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import axiosInstance from '../Services/axiosInstance';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/LoginPage.css'
 
 const LoginPage = () => {
@@ -10,7 +10,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const validateForm = () => {
         if (!username || !password) {
@@ -29,12 +29,12 @@ const LoginPage = () => {
             if (isLogin) {
                 const response = await axiosInstance.post('/auth/login', { username, password });
                 console.log('Login successful:', response.data);
-                navigate('/profile');
+                history.push('/profile');
             } else {
                 // handle create profile
                 const response = await axiosInstance.post('/auth/register', { username, email, password });
                 console.log('Profile created:', response.data);
-                navigate('/profile');
+                history.push('/profile');
             }
         } catch (error) {
             console.error('Error during submission:', error);
