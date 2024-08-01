@@ -19,7 +19,7 @@ const LoginPage = () => {
         }
         if (!isLogin && !email) {
             setError('Email is required');
-            return fals;
+            return false;
         }
         setError('');
         return true;
