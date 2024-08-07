@@ -51,7 +51,7 @@ const LoginPage = () => {
             localStorage.setItem('authToken', response.data.token);
 
             // redirect to profile page
-            history.push('/profile);
+            history.push('/profile');
         } catch (error) {
             console.error('Error during submission:', error);
             setError('An error occurred, please try again.');
