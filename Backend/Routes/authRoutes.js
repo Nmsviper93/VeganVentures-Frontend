@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../Controllers/authController');
+const { verifyToken } = require('../Middleware/authMiddleware');
 
 // create new router instance
 const router = express.Router();
@@ -14,5 +15,10 @@ router.post('/register', authController.register);
 // @desc    Authenticate user & get token
 // @access  Public
 router.post('/login', authController.login);
+
+// @route  GET api/auth/check-status
+// @desc   Check authentication status
+// @access Private
+router.get('/check-status', verifyToken, authController.checkStatus);
 
 module.exports = router;
