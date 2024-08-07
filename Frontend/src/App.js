@@ -10,6 +10,7 @@ import ProfileEditPage from './components/ProfileEditPage';
 import RegisterPage from './components/RegisterPage';
 import RecipeDetailsPage from './components/RecipeDetailsPage';
 import Recipes from './components/Recipes';
+import ProtectedRoute from '.components/ProtectedRoute';
 import './styles/App.css';
 
 
@@ -28,16 +29,17 @@ const App = () => {
             </header>
             <Router>
                 <Switch>
-                    <Route path="/" exact component={HomePage} />
+                    <ProtectedRoute path="/home" exact component={HomePage} />
                     <Route path="/search" component={SearchPage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/favorites" component={FavoritesPage} />
-                    <Route path="/profile" component={ProfilePage} />
+                    <ProtectedRoute path="/profile" component={ProfilePage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
                     <Route path="/login" component={LoginPage} />
                     <Route path="/register" component={RegisterPage} />
                     <Route path="/recipe/:id" component={RecipeDetailsPage} />
                     <Route path="/recipes" component={Recipes} />
+                    <Redirect from="/" to="/login" />
                 </Switch>
             </Router>
             <footer>
