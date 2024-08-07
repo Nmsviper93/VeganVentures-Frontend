@@ -30,21 +30,28 @@ const LoginPage = () => {
         if (!validateForm()) return;
         
         try {
+            let response;
             // handle login
             if (isLogin) {
                 console.log('Attempting to log in with:', { username, password });
-                const response = await axiosInstance.post('/auth/login', { username, password });
-                localStorage.setItem('token', response.data.token);
+                response = await axiosInstance.post('/auth/login', { username, password });
+                // localStorage.setItem('token', response.data.token);
                 console.log('Login successful:', response.data);
-                history.push('/home');
+                // history.push('/home');
             } else {
                 // handle create profile
                 console.log('Attempting to create profile with:', { username, email, password });
-                const response = await axiosInstance.post('/auth/register', { username, email, password });
-                localStorage.setItem('token', response.data.token);
+                response = await axiosInstance.post('/auth/register', { username, email, password });
+                // localStorage.setItem('token', response.data.token);
                 console.log('Profile created:', response.data);
-                history.push('/home');
+                // history.push('/home');
             }
+
+            // store token in localStorage
+            localStorage.setItem('authToken', response.data.token);
+
+            // redirect to profile page
+            history.push('/profile);
         } catch (error) {
             console.error('Error during submission:', error);
             setError('An error occurred, please try again.');
