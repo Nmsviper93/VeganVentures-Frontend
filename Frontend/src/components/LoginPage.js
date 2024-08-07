@@ -33,15 +33,17 @@ const LoginPage = () => {
             // handle login
             if (isLogin) {
                 console.log('Attempting to log in with:', { username, password });
-                const response = await axiosInstance.post('/api/auth/login', { username, password });
+                const response = await axiosInstance.post('/auth/login', { username, password });
+                localStorage.setItem('token', response.data.token);
                 console.log('Login successful:', response.data);
-                history.push('/profile');
+                history.push('/home');
             } else {
                 // handle create profile
                 console.log('Attempting to create profile with:', { username, email, password });
-                const response = await axiosInstance.post('/api/auth/register', { username, email, password });
+                const response = await axiosInstance.post('/auth/register', { username, email, password });
+                localStorage.setItem('token', response.data.token);
                 console.log('Profile created:', response.data);
-                history.push('/profile');
+                history.push('/home');
             }
         } catch (error) {
             console.error('Error during submission:', error);
@@ -76,11 +78,12 @@ const LoginPage = () => {
                     placeholder="Password"
                     required
                 />
+                <button type="submit">{isLogin ? 'Login' : 'Create Profile'}</button>
                 <button type="button" onClick={() => setIsLogin(!isLogin)}>
                     {isLogin ? 'Create Profile' : 'Login'}
                 </button>
-                <button type="submit">{isLogin ? 'Login' : 'Create Profile'}</button>
             </form>
+                {error && <p className="error">{error}</p>}
         </div>
     );
 };
