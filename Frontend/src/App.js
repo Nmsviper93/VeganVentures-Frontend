@@ -40,7 +40,7 @@ const App = () => {
                 <Switch>
                     <ProtectedRoute path="/home" exact component={HomePage} />
                     <ProtectedRoute path="/search" component={SearchPage} />
-                    <ProtectedRouteRoute path="/favorites" component={FavoritesPage} />
+                    <ProtectedRoute path="/favorites" component={FavoritesPage} />
                     <ProtectedRoute path="/profile" component={ProfilePage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
