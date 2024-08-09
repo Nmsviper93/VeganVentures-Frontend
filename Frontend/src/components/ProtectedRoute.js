@@ -5,7 +5,8 @@ const isAuthenticated = () => {
   return !!localStorage.getItem('token');
 };
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
+const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
+  return (
   <Route
     {...rest}
     render={(props) =>
