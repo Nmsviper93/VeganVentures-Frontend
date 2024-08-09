@@ -38,10 +38,10 @@ const App = () => {
             </header>
             <Router>
                 <Switch>
-                    <ProtectedRoute path="/home" exact component={HomePage} />
-                    <ProtectedRoute path="/search" component={SearchPage} />
-                    <ProtectedRoute path="/favorites" component={FavoritesPage} />
-                    <ProtectedRoute path="/profile" component={ProfilePage} />
+                    <ProtectedRoute path="/home" exact component={HomePage} isAuthenticated={isAuthenticated} />
+                    <ProtectedRoute path="/search" component={SearchPage} isAuthenticated={isAuthenticated} />
+                    <ProtectedRoute path="/favorites" component={FavoritesPage} isAuthenticated={isAuthenticated} />
+                    <ProtectedRoute path="/profile" component={ProfilePage} isAuthenticated={isAuthenticated} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/profile/edit" component={ProfileEditPage} />
                     <Route path="/login" component={LoginPage} />
