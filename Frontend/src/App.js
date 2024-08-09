@@ -56,5 +56,6 @@ const App = () => {
             </footer>
         </div>
     );
+}
 
 export default App;
